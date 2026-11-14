@@ -1,0 +1,27 @@
+name: OptionValue
+options:
+  bundleIdPrefix: local
+  deploymentTarget:
+    macOS: "15.0"
+targets:
+  OptionValue:
+    type: application
+    platform: macOS
+    sources: [OptionValue]
+    # XcodeGen writes Info.plist from these properties. CFBundleName is the menu-bar name; the product,
+    # process and app file stay "OptionValue".
+    info:
+      path: Info.plist
+      properties:
+        CFBundleName: Option Value
+        CFBundleDisplayName: Option Value
+        LSApplicationCategoryType: public.app-category.finance
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "6.0"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
